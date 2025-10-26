@@ -1,0 +1,158 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+@import "tailwindcss";
+
+@theme {
+  --color-primary-black: #0a0a0a;
+  --color-accent-orange: #ff6b35;
+  --color-warm-white: #f8f8f8;
+  --color-charcoal: #2a2a2a;
+  --font-family-inter: 'Inter', sans-serif;
+}
+
+.glow-orange {
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+}
+
+.hover-lift {
+  transition: all 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-8px) rotateX(5deg);
+  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+}
+
+.typing-cursor {
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.skill-chip {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+.skill-chip.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.avatar-container {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.avatar-container:hover {
+  transform: scale(1.05);
+}
+.avatar-container:hover .skill-chip:nth-child(1) {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  transition-delay: 0.1s;
+}
+.avatar-container:hover .skill-chip:nth-child(2) {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.2s;
+}
+.avatar-container:hover .skill-chip:nth-child(3) {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.3s;
+}
+.avatar-container:hover .skill-chip:nth-child(4) {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  transition-delay: 0.4s;
+}
+.avatar-container:hover .skill-chip:nth-child(5) {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.5s;
+}
+.avatar-container:hover .skill-chip:nth-child(6) {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.6s;
+}
+
+.skill-chip:nth-child(1) {
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.skill-chip:nth-child(2) {
+  top: 20%;
+  right: -80px;
+}
+.skill-chip:nth-child(3) {
+  bottom: 20%;
+  right: -80px;
+}
+.skill-chip:nth-child(4) {
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.skill-chip:nth-child(5) {
+  bottom: 20%;
+  left: -80px;
+}
+.skill-chip:nth-child(6) {
+  top: 20%;
+  left: -80px;
+}
+
+.timeline-item {
+  opacity: 1;
+  transform: translateX(-50px);
+  transition: all 0.6s ease;
+}
+.timeline-item.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.skill-bar {
+  height: 8px;
+  background: #2a2a2a;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b35, #ff8c42);
+  border-radius: 4px;
+  width: 0;
+  transition: width 1s ease;
+}
+.skill-progress.animate {
+  animation: fillBar 1.5s ease forwards;
+}
+@keyframes fillBar {
+  to {
+    width: var(--skill-width);
+  }
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all 0.6s ease;
+}
+.reveal-up.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tech-logo {
+  transition: all 0.3s ease;
+  filter: grayscale(100%) brightness(0.7);
+}
+.tech-logo:hover {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.1);
+}
